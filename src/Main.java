@@ -14,12 +14,21 @@ public class Main {
         inventory.addProduct(desk);
         inventory.addProduct(notebook);
         inventory.addProduct(printer);
-
+        System.out.println("\n<<<<<<<<<< Assignment number 3 >>>>>>>>>>");
         inventory.showInventory();
 
         ///Assignment number 4
+        System.out.println("\n<<<<<<<<<< Assignment number 4 >>>>>>>>>> \n");
         System.out.println("\n--- Now showing if there is any discount available...");
         inventory.showInventoryAndDiscounts();
+
+        ///Assignment number 5
+        System.out.println("\n<<<<<<<<<< Assignment number 5 >>>>>>>>>> \n");
+        System.out.println("\n--- We have received news that all products are increasing in price...");
+        System.out.println("\nIncreasing price...");
+        inventory.increasePrice();
+        System.out.println("\nNow showing finished product list... ");
+        inventory.showInventory();
 
 
 

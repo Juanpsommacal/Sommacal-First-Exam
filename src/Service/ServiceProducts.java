@@ -1,7 +1,6 @@
 package Service;
 
-import Classes.Furniture;
-import Classes.ProductsForSale;
+import Classes.*;
 
 import java.util.ArrayList;
 
@@ -15,7 +14,7 @@ public class ServiceProducts {
     public void showInventory(){
         for(ProductsForSale product : inventory){
             ///We print index + 1 so the first product isn't product number 0
-            System.out.println("----- Product number " + (inventory.indexOf(product) + 1) + " -----");
+            System.out.println("----- Product number " + (inventory.indexOf(product) + 1) + " ----- (" + product.getClass() + ")");
             System.out.println("" + product.toString());
         }
     }
@@ -33,6 +32,24 @@ public class ServiceProducts {
 
     public void addProduct(ProductsForSale product){
         inventory.add(product);
+    }
+
+    public void increasePrice(){
+        for(ProductsForSale product : inventory){
+            System.out.println("Product: " + product.getClass() +
+                                ", Name: " + product.getName() +
+                                ", Previous price: " + product.getPrice());
+            if(product instanceof Chair){
+                product.increasePrice(5);
+            } else if (product instanceof Desk){
+                product.increasePrice(10);
+            } else if (product instanceof Printer){
+                product.increasePrice(15);
+            } else if (product instanceof Notebook){
+                product.increasePrice(20);
+            }
+            System.out.println("New Price: " + product.getPrice());
+        }
     }
 
 
